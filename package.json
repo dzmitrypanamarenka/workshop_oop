@@ -1,0 +1,19 @@
+{
+  "name": "node_hw1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon -r @babel/register ./index.js"
+  },
+  "author": "Dzmitry Panamarenka",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "@babel/preset-stage-2": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "nodemon": "^1.18.7"
+  }
+}
