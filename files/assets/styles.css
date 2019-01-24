@@ -1,0 +1,12 @@
+.main {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.data-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+}
