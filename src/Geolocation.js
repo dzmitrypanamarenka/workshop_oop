@@ -4,14 +4,17 @@ import messages from './config/messages';
 const { wrongIpMessage } = messages;
 
 export default class Geolocation {
-  constructor(){
-    this.ip = '';
-    this.url = 'http://ip-api.com/json/'
+  constructor(fetchRequest = axios.request){
+    this.url = 'http://ip-api.com/json/';
+    this.fetchRequest = fetchRequest;
   }
 
   getGeoData = async (ip) => {
-    const currentIp = ip instanceof Object ? this.ip : ip;
-    const { data } = await axios.get(`${this.url}${currentIp}`);
+    const currentIp = ip instanceof Object ? '' : ip;
+    const { data } = await this.fetchRequest({
+      baseURL: this.url,
+      url: currentIp
+    });
     if (data.message) {
       throw new Error(wrongIpMessage);
     }

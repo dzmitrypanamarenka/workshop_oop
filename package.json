@@ -9,8 +9,8 @@
     "build": "babel src --out-dir dist --source-maps inline",
     "watch": "babel src --watch --out-dir dist"
   },
-  "bin": {
-    "file-util": "src/index.js"
+  "jest": {
+    "testPathIgnorePatterns": ["/node_modules/", "mocks", "fixtures"]
   },
   "author": "Dzmitry Panamarenka",
   "license": "ISC",

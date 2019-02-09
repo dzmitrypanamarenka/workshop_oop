@@ -13,8 +13,8 @@ program
   .description('Pass an IP address')
   .action(async (ipAddress) => {
     try {
-      const Geo = new Geolocation();
-      const data = await Geo.getGeoData(ipAddress);
+      const geo = new Geolocation();
+      const data = await geo.getGeoData(ipAddress);
       console.log(data)
     } catch (e) {
       console.error(e);

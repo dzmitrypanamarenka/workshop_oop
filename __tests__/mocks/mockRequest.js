@@ -1,0 +1,1 @@
+export default (data) => () => Promise.resolve(data)
