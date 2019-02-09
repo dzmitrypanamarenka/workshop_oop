@@ -1,10 +1,6 @@
 export default {
   helpMessage: `\nHi, mate!\n
-    This is an util that helps you to do some staff with your files,\n
-    but you should feed it by filepath and action.\n
-    Be careful, or you'll see this message again!
+    Type IP and get your geo-staff\n
   `,
-  noActionMessage: 'No such action! Please pass appropriate action\n',
-  noFileMessage: 'No file or string were passed! Please pass appropriate filepath or string\n',
-  noFileExistMessage: "Directory or file path doesn't exist\n"
+  wrongIpMessage: `Wrong IP address! Try again with right one`
 }
