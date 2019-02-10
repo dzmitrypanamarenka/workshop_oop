@@ -1,0 +1,63 @@
+```defmodule ExtEnum do
+  def middle(list) do
+    middle_index = round(length(list) / 2)
+    Enum.at(list, middle_index)
+  end
+end
+
+defmodule Main do
+  def plural(str, symbol) do
+    if String.ends_with?(str, "s"), do: str, else: "#{str}#{symbol}"
+  end
+
+  def main do
+    {:ok, files} = File.ls('.')
+
+    files
+    |> Enum.filter(&(!String.starts_with?(&1, ".")))
+    |> Enum.sort()
+    |> ExtEnum.middle()
+    |> plural("s")
+    |> String.upcase()
+    |> IO.puts()
+  end
+end
+
+Main.main()```
+
+kirill.mokevnin [8:10 PM]
+```class Array
+  def middle
+    middle_index = (self.length / 2).round
+    self[middle_index]
+  end
+end
+
+class String
+  def plural(symbol)
+    self.end_with?('s') ? self : "#{self}#{symbol}"
+  end
+end
+
+class Main
+  def main
+    files = Dir.entries('.')
+    puts files
+           .select { |file| file.start_with?('.') }
+           .sort
+           .middle
+           .plural('s')
+           .upcase
+  end
+end
+
+Main.new.main```
+
+kirill.mokevnin [8:21 PM]
+files
+   |> Enum.filter(&(!String.starts_with?(&1, “.”)))
+   |> Enum.sort()
+   |> ExtEnum.middle()
+   |> plural(“s”)
+   |> String.upcase()
+   |> IO.puts()

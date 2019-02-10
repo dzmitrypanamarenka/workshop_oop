@@ -1,0 +1,24 @@
+{
+  "name": "elexir",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "babel-node": "@babel/node",
+    "test": "jest",
+    "build": "babel src --out-dir dist --source-maps inline",
+    "watch": "babel src --watch --out-dir dist"
+  },
+  "author": "Dzmitry Panamarenka",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.0",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.2.1",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.2.0",
+    "@babel/register": "^7.0.0"
+  },
+  "devDependencies": {}
+}
