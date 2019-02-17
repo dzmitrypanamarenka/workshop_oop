@@ -1,23 +1,16 @@
 import axios from 'axios';
 
+import mapForecastData from './adapter';
 import messages from './config/messages';
 const { wrongIpMessage } = messages;
 
-export default class Geolocation {
-  constructor(fetchRequest = axios.request){
-    this.url = 'http://ip-api.com/json/';
-    this.fetchRequest = fetchRequest;
+class WeatherService {
+  constructor(service) {
+    this.service = service;
   }
 
-  getGeoData = async (ip) => {
-    const currentIp = ip instanceof Object ? '' : ip;
-    const { data } = await this.fetchRequest({
-      baseURL: this.url,
-      url: currentIp
-    });
-    if (data.message) {
-      throw new Error(wrongIpMessage);
-    }
-    return data;
-  };
+  getForecast = async (city) => {
+    const data = await axios.get(this.service);
+    return mapForecastData(data);
+  }
 }

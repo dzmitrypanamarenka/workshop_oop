@@ -11,7 +11,7 @@ const { helpMessage } = messages;
 program
   .version('1.0.0')
   .description('Pass an IP address')
-  .action(async (ipAddress) => {
+  .action(async (service, city) => {
     try {
       const geo = new Geolocation();
       const data = await geo.getGeoData(ipAddress);

@@ -10,7 +10,11 @@
     "watch": "babel src --watch --out-dir dist"
   },
   "jest": {
-    "testPathIgnorePatterns": ["/node_modules/", "mocks", "fixtures"]
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "mocks",
+      "fixtures"
+    ]
   },
   "author": "Dzmitry Panamarenka",
   "license": "ISC",
